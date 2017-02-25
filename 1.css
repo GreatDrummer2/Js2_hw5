@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo');
+*{
+	padding: 0;
+	margin:0;
+}
+body{
+	font-family: 'Baloo', cursive;
+	background: #191919;
+}
+.clock{
+	display: block;
+	color:#e5e5e5; 
+	margin-left:20%;
+	margin-top:7.5%;
+
+}
+.num{
+	display: inline-block;
+	font-size: 200px;
+}
+.alert{
+	display:block;
+	color: #e5e5e5;
+	background: #ff3822;
+	margin-left: 33.9%;
+	margin-top: 10%;
+	font-size: 100px;
+	height: 100px;
+	width: 500px;
+	text-align: center;
+	border-radius: 20px;
+	line-height:100px; 
+}
