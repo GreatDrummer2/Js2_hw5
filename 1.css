@@ -19,7 +19,9 @@ body{
 	display: none;
 	font-size: 200px;
 }
-
+.green{
+	color: #3dff02;
+}
 .open{
 	display:block;
 }
@@ -27,7 +29,7 @@ body{
 	display:block;
 	color: #e5e5e5;
 	background: #ff3822;
-	margin-left: 12%;
+	margin-left: 13%;
 	margin-top: 10%;
 	font-size: 100px;
 	height: 100px;

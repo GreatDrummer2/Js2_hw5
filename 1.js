@@ -1,6 +1,6 @@
 function Clock(options){
   var elem;
-  var button;
+  var button = document.createElement('div');
   function getElem(){
     if(!elem) render();
     return elem;
@@ -9,9 +9,7 @@ function Clock(options){
   function render(){
     elem = document.createElement('div');
     elem.className = 'clock';
-    document.body.appendChild(elem);
-    
-    button = document.createElement('div');
+
     button.className = 'alert';
     button.innerHTML = options.butTitle;
     elem.appendChild(button);
@@ -32,12 +30,11 @@ function Clock(options){
       var m = d.getMinutes();
       if(m< 10) m = '0'+ m;
       var s = d.getSeconds();
-      s+=1;
       if(s< 10) s = '0'+ s;
+      if(s == '00') num.classlist.add('green');
       num.textContent = '['+ h + ':' + m + ':' + s + ']';
     }
     setInterval(date,1000);
-    elem.appendChild(num)
   }
 
    function open(){
@@ -51,15 +48,13 @@ function Clock(options){
     elem.getElementsByClassName('num')[0].classList.remove('open');
    }
    function toggle(){
-    if(elem.getElementsByClassName('num')[0].classList.contains('open')) close();
+    if(elem.lastElementChild.classList.contains('open')) close();
     open();
    }
 
   this.getElem = getElem;
-  this.open = open;
-  this.close = close;
-  this.toggle = toggle;
 }
 
 var clock = new Clock({butTitle:'ALERT'});
 var elem = clock.getElem();
+document.body.appendChild(elem);
