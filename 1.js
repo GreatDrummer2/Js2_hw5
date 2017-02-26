@@ -14,6 +14,10 @@ function Clock(options){
     button.innerHTML = options.butTitle;
     elem.appendChild(button);
   }
+  
+  button.mousedown = function(){
+    return false;
+  }
 
   button.onclick = function(event){
     toggle();
@@ -41,7 +45,7 @@ function Clock(options){
       };
       num.textContent = '['+ h + ':' + m + ':' + s + ']';
     }
-    setInterval(date,1000);
+    setInterval(date,5000);
   }
 
    function open(){
@@ -52,7 +56,7 @@ function Clock(options){
    }
 
    function close(){
-    elem.getElementsByClassName('num')[0].classList.remove('open');
+    elem.removeChild(elem.lastElementChild);
    }
    function toggle(){
     if(elem.lastElementChild.classList.contains('open')) close();
