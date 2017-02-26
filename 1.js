@@ -40,6 +40,9 @@ function Clock(options){
   }
 
    function open(){
+    if (!elem.querySelector('.num')) {
+      renderClockFace();
+    }
     elem.getElementsByClassName('num')[0].classList.add('open');
    }
 
