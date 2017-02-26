@@ -10,19 +10,24 @@ body{
 .clock{
 	display: block;
 	color:#e5e5e5; 
-	margin-left:20%;
+	margin-left:24%;
 	margin-top:7.5%;
 
 }
+
 .num{
-	display: inline-block;
+	display: none;
 	font-size: 200px;
+}
+
+.open{
+	display:block;
 }
 .alert{
 	display:block;
 	color: #e5e5e5;
 	background: #ff3822;
-	margin-left: 18%;
+	margin-left: 12%;
 	margin-top: 10%;
 	font-size: 100px;
 	height: 100px;
