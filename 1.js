@@ -59,8 +59,12 @@ function Clock(options){
     elem.removeChild(elem.lastElementChild);
    }
    function toggle(){
-    if(elem.lastElementChild.classList.contains('open')) close();
-    else open();
+    if(elem.lastElementChild.classList.contains('open')){
+      close()
+    }
+    else{
+      open()
+    } ///////////// ELSE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
    }
 
   this.getElem = getElem;
