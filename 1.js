@@ -28,7 +28,7 @@ function Clock(options){
     var num = document.createElement('div');
     num.className = 'num';
     elem.appendChild(num); 
-    function date(){
+     interval = setInterval(function (){
       arrColors = ['green','sky','purple','orange'];
       arrTime = ['00','15','30','45'];
       arrColors.forEach(function(item){
@@ -45,8 +45,7 @@ function Clock(options){
         if(s == arrTime[i]) num.classList.add(arrColors[i]);
       };
       num.textContent = '['+ h + ':' + m + ':' + s + ']';
-    }
-     interval = setInterval(date,1000);
+    },1000);
   }
 
    function open(){
@@ -58,11 +57,10 @@ function Clock(options){
 
    function close(){
     elem.removeChild(elem.lastElementChild);
-    clearInterval(interval);
    }
    function toggle(){
     if(elem.lastElementChild.classList.contains('open')) close();
-    open();
+    else open();
    }
 
   this.getElem = getElem;
