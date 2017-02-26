@@ -1,12 +1,8 @@
 function Clock(options){
   var elem;
-  
+  var button;
   function getElem(){
-    if(!elem){
-      render();
-      renderClockFace();
-      setTimeout(open, 1000);
-    } 
+    if(!elem) render();
     return elem;
   }
 
@@ -14,17 +10,15 @@ function Clock(options){
     elem = document.createElement('div');
     elem.className = 'clock';
 
-    var button = document.createElement('div');
+    button = document.createElement('div');
     button.className = 'alert';
     button.innerHTML = options.butTitle;
     elem.appendChild(button);
   }
 
-  /*elem.onclick = function(event){
-    if(event.target.closest('clock')){
-      toggle();
-    }
-  }*/
+  button.onclick = function(event){
+    toggle();
+  }
 
   function renderClockFace(){
     var num = document.createElement('div');
@@ -46,16 +40,21 @@ function Clock(options){
   }
 
    function open(){
-    var num = elem.getElementsByClassName('num');
-    console.log(num);
-    num.classList.add('open');
+    elem.getElementsByClassName('num')[0].classList.add('open');
    }
 
-   /*function toggle(){
-
-   }*/
+   function close(){
+    elem.getElementsByClassName('num')[0].classList.remove('open');
+   }
+   function toggle(){
+    if(elem.getElementsByClassName('num')[0].classList.contains('open')) close();
+    open();
+   }
 
   this.getElem = getElem;
+  this.open = open;
+  this.close = close;
+  this.toggle = toggle;
 }
 
 var clock = new Clock({butTitle:'ALERT'});
