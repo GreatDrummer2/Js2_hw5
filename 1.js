@@ -24,6 +24,11 @@ function Clock(options){
     num.className = 'num';
     elem.appendChild(num); 
     function date(){
+      arrColors = ['green','sky','purple','orange'];
+      arrTime = ['00','15','30','45'];
+      arrColors.forEach(function(item){
+        num.classList.remove(item);
+      });
       var d = new Date();
       var h = d.getHours();
       if(h< 10) h = '0'+ h;
@@ -31,7 +36,9 @@ function Clock(options){
       if(m< 10) m = '0'+ m;
       var s = d.getSeconds();
       if(s< 10) s = '0'+ s;
-      if(s == '00') num.classlist.add('green');
+      for(var i =0;i < arrTime.length;i++){
+        if(s == arrTime[i]) num.classList.add(arrColors[i]);
+      };
       num.textContent = '['+ h + ':' + m + ':' + s + ']';
     }
     setInterval(date,1000);

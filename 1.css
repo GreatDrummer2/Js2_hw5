@@ -22,6 +22,15 @@ body{
 .green{
 	color: #3dff02;
 }
+.purple{
+	color:#9000ff;
+}
+.sky{
+	color:#00d8ff;
+}
+.orange{
+	color: #ff6600;
+}
 .open{
 	display:block;
 }
