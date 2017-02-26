@@ -1,6 +1,7 @@
 function Clock(options){
   var elem;
   var button = document.createElement('div');
+  var interval;
   function getElem(){
     if(!elem) render();
     return elem;
@@ -45,7 +46,7 @@ function Clock(options){
       };
       num.textContent = '['+ h + ':' + m + ':' + s + ']';
     }
-    setInterval(date,5000);
+     interval = setInterval(date,1000);
   }
 
    function open(){
@@ -57,6 +58,7 @@ function Clock(options){
 
    function close(){
     elem.removeChild(elem.lastElementChild);
+    clearInterval(interval);
    }
    function toggle(){
     if(elem.lastElementChild.classList.contains('open')) close();
