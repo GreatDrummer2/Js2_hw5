@@ -20,6 +20,9 @@ function Voting(options){
     var sign = document.createElement('div');
     sign.className = 'sign';
     sign.id = 'sign'+i;
+    if(i == 1){
+      sign.classList.add('blue');
+    }
     sign.innerHTML = item;
     elem.appendChild(sign);
     })
@@ -30,9 +33,18 @@ function Voting(options){
 
   function setVote(num){
     num+='';
+    sign = num.match(/\-/);
     num = num.replace(/\D/ig,'');
     if(!num) num = 0;
-    elem.lastChild.innerHTML = num;
+    elem.lastChild.innerHTML = sign[0] + num;
+  }
+
+  document.getElementById('sign0').onmousedown = function(){
+    return false;
+  }
+
+  document.getElementById('sign1').onmousedown = function(){
+    return false;
   }
 
   document.getElementById('sign0').onclick = function(){

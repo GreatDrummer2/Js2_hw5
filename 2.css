@@ -15,6 +15,7 @@ body{
 	margin-bottom:200px;
 }
 .sign{
+	cursor: pointer;
 	display:block;
 	background: #e0e0e0;
 	width: 100px;
