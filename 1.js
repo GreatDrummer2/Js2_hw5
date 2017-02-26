@@ -9,7 +9,8 @@ function Clock(options){
   function render(){
     elem = document.createElement('div');
     elem.className = 'clock';
-
+    document.body.appendChild(elem);
+    
     button = document.createElement('div');
     button.className = 'alert';
     button.innerHTML = options.butTitle;
@@ -62,5 +63,3 @@ function Clock(options){
 
 var clock = new Clock({butTitle:'ALERT'});
 var elem = clock.getElem();
-document.body.appendChild(elem);
-   
