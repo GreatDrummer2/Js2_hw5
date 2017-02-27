@@ -26,7 +26,13 @@ input{
 	height: 50px;
 	font-size: 40px;
 	line-height: 50px;
+	color:#435f8c;
+	width: 500px;
+	font-family: 'Baloo', cursive;
 }
 input[type="submit"]{
-	margin-right: 790px;
+	width: 505px;
+}
+::-webkit-input-placeholder,::-webkit-input-value {
+	color: #749ee0;
 }
