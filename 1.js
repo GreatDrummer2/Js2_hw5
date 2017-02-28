@@ -2,6 +2,7 @@ function Clock(options){
   var elem;
   var button = document.createElement('div');
   var interval;
+
   function getElem(){
     if(!elem) render();
     return elem;
@@ -10,16 +11,11 @@ function Clock(options){
   function render(){
     elem = document.createElement('div');
     elem.className = 'clock';
-
     button.className = 'alert';
     button.innerHTML = options.butTitle;
     elem.appendChild(button);
   }
   
-  button.mousedown = function(){
-    return false;
-  }
-
   button.onclick = function(event){
     toggle();
   }

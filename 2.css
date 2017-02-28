@@ -26,6 +26,7 @@ body{
 	font-size: 100px;
 	line-height: 100px;
 	margin-bottom: 10px;
+	user-select:none;
 }
 .blue{
 	color: #4274c4;

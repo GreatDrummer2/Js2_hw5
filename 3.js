@@ -27,7 +27,7 @@ function MyCanvas(options){
 
   document.getElementById('input5').onclick = function(){
     arrayForInfo = $(":text").map(function(item){
-      var color = this.value.match(/#[0-9a-f]{6}|#[0-9a-f]{3}/g);
+      var color = this.value.toLowerCase().match(/#[0-9a-f]{6}|#[0-9a-f]{3}/g);
       if(color){
         return color;
       } // почему не работает $("form0").serializeArray(); ??????????
